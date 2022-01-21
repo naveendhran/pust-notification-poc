@@ -27,4 +27,4 @@ app.post('/subscribe', (req, res) => {
     webPush.sendNotification(subscription, payload).catch(err => console.error(err));
 })
 
-app.listen(8080, () => console.log('listerning on port 8080'))
+app.listen(process.env.PORT || 5000, () => console.log('listerning on port 8080'))
