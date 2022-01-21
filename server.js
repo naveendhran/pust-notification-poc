@@ -13,6 +13,10 @@ const privateVapidKey = "lWySODv1CEZJVfLHNs8CFDijIWMCMOb20A9OOO-WJv0";
 
 webPush.setVapidDetails('mailto:test@test.com', publicVapidKey, privateVapidKey);
 
+app.get("/", (req, res) => {
+    res.status(200).json({ title: "node is up and running" })
+})
+
 app.post('/subscribe', (req, res) => {
     const subscription = req.body;
 
