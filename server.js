@@ -18,6 +18,11 @@ app.get("/", (req, res) => {
     res.status(200).json({ title: "node is up and running" })
 })
 
+app.get("/scheduleNotification", (res, req) => {
+    setTimeout(temp, 10000)
+    res.status(200).json({ message: "Scheduled after 10 seconds" })
+})
+
 app.post('/subscribe', (req, res) => {
     subscription = req.body;
 
@@ -27,7 +32,7 @@ app.post('/subscribe', (req, res) => {
 
     webPush.sendNotification(subscription, payload).catch(err => console.error(err));
 })
-setTimeout(temp, 10000)
+
 function temp() {
     const interval = setInterval(() => {
         if (subscription) {
