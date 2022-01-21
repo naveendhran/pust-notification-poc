@@ -18,9 +18,9 @@ app.get("/", (req, res) => {
     res.status(200).json({ title: "node is up and running" })
 })
 
-app.get("/scheduleNotification", (res, req) => {
+app.get("/scheduleNotification", (req, res) => {
     setTimeout(temp, 10000)
-    res.status(200).json({ message: "Scheduled after 10 seconds" })
+    res.status(200).json({ message: "Scheduled 9 notifications after after 10 seconds" })
 })
 
 app.post('/subscribe', (req, res) => {
@@ -41,7 +41,7 @@ function temp() {
         }
     }, 1000)
 
-    setTimeout(() => { clearInterval(interval) }, 3000)
+    setTimeout(() => { clearInterval(interval) }, 10000)
 }
 
 
